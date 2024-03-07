@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/upload-style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/headerStyle.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/classification-style.css' %}">
+        <script src="../static/javascript/nav-effect.js" defer></script>
+        <script src="../static/javascript/upload-file.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <div class="content">
+                <h1>SunSpoty</h1>
+                <ul>
+                    <li><a class="anchor active" href="/">Home Page</a></li>
+                    <li><a class="anchor" href="/about">About Sunspoty</a></li>
+                    <li><a class="anchor" href="/help">How to use me?</a></li>
+                </ul>
+            </div>
+        </header>
+        <form enctype="multipart/form-data" action="classificationModel" method="post">
+            {% csrf_token %}
+            <div class="form">
+
+                <div class="info">
+                    <h1>How To Process?</h1>
+                    <ul id="list">
+                        <li>Drag and Drop your mangnetogram image of any sunspot</li>
+                        <li>Click on Process Button</li>
+                        <li>Check The Result</li>
+                    </ul>
+                    <h3><span>Note: </span>This is Mount Wilson classification.</h3>
+                    <button type="submit">Strat Processing</button>
+                    <button id="refreshBtn" type="button">Refresh</button>
+                </div>
+
+                {% if filePathName %}
+                <div class="drag-area">
+                    <img src={{filePathName}} alt='imagename' class="magn-image">
+                </div>
+                {% else %}
+
+                <div class="drag-area">
+                    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <header>Drag & Drop to Upload File</header>
+                    <span>OR</span>
+                    <button type="button" id="browse">Browse File</button>
+                    <input type="file" name="imageFile" id="image-file" hidden>
+                </div>
+
+                {% endif %}
+            </div>
+        </form>
+        {% if show_classification %}
+        <div class="result-container">
+            <h1 id="result-title">This Sunspot is of type: {{ predicted_class }}</h1>
+            <div class="classes">
+                <div class="class-type">
+                    <h1>α – Alpha</h1>
+                    <p>Pourcentage: <span>{{ alpha }}%</span></span></p>
+                </div>
+
+                <div class="class-type">
+                    <h1>β - Beta</h1>
+                    <p>Pourcentage: <span>{{ beta }}%</span></span></p>
+                </div>
+
+                <div class="class-type">
+                    <h1>Betax</h1>
+                    <p>Pourcentage: <span>{{betax}}%</span></span></p>
+                </div>
+            </div>
+        </div>
+        {% endif%}
+
+        <script>
+            document.getElementById("refreshBtn").addEventListener("click", function () {
+                fetch("/classification", {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "text/html",
+                    },
+                })
+                    .then(response => {
+                        // Redirect to the new page
+                        window.location.href = response.url;
+                    })
+                    .catch(error => {
+                        // Handle any errors
+                        console.error(error);
+                    });
+            });
+        </script>
+    </body>
+
+</html>

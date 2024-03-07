@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+:root{
+  --primary-color: #5256ad;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.drag-area{
+  position: relative;
+  border: 2px dashed var(--primary-color);
+  min-height: 500px;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.drag-area.active{
+  border: none;
+}
+.drag-area .icon{
+  font-size: 100px;
+  color: var(--primary-color);
+}
+.drag-area header{
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+.drag-area span{
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--primary-color);
+  
+  margin: 10px 0 15px 0;
+}
+.drag-area button{
+  color: var(--primary-color);
+  background-color: white;
+  font-size: 16px;
+  border: 0.2em solid var(--primary-color);
+  border-radius: 0.5em;
+  width: 12em;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 3em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  margin: 1em;
+}
+
+.drag-area button:hover {
+  color: white;
+  background-color: var(--primary-color)
+}
+
+
+.drag-area img{
+  position: absolute;
+  display: block;
+  border: 2px solid var(--primary-color);
+  height: 100%;
+  width: 100%;
+  border-radius:15px;
+  object-fit: contain;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+.drag-area.active img{
+  display: block;
+  border-radius: 5px;
+}

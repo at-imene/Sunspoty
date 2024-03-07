@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>How to use the app?</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/headerStyle.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+        <script src="../static/javascript/nav-effect.js" defer></script>
+
+    </head>
+
+    <body>
+        <header>
+            <div class="content">
+                <h1>SunSpoty</h1>
+                <ul>
+                    <li><a class="anchor active" href="/">Home Page</a></li>
+                    <li><a class="anchor" href="/about">About Sunspoty</a></li>
+                    <li><a class="anchor" href="/help">How to use me?</a></li>
+                </ul>
+            </div>
+
+        </header>
+        <div class="content-box">
+            <div class="desc">
+                <h1>What is Sunspoty?</h1>
+                <p>Sunspoty is a web-based application designed to assist in the analysis and understanding of sunspots.
+                    It provides two main features: </p>
+                <ul id="list">
+                    <li>
+                        <h2>Automatic Calculation of Wolf Number</h2>
+                        <p>Using advanced algorithms, Sunspoty can analyze an image of the sun and automatically
+                            calculate the Wolf number. The Wolf number is a widely used parameter for quantifying the
+                            number and complexity of sunspots, providing valuable information for solar activity
+                            monitoring.</p>
+
+                    </li>
+                    <li>
+                        <h2>Sunspot Classification</h2>
+                        <p>Sunspoty offers a sunspot classification feature that allows users to upload a magnetogram
+                            image of a sunspot. Based on the uploaded image, Sunspoty utilizes machine learning
+                            techniques to classify the sunspot into one of three categories: alpha, beta, or betax. This
+                            classification helps researchers and enthusiasts gain insights into the characteristics and
+                            behavior of sunspots.</p>
+
+                    </li>
+                    <p>Whether you're a solar researcher, student, or simply fascinated by the wonders of our sun,
+                        Sunspoty provides a user-friendly platform for exploring and analyzing sunspots. Try it out and
+                        unlock new perspectives on our dynamic star!
+                    </p>
+
+                </ul>
+                <p class="p">Whether you're a solar researcher, student, or simply fascinated by the wonders of our sun, Sunspoty
+                    provides a user-friendly platform for exploring and analyzing sunspots. Try it out and unlock new
+                    perspectives on our dynamic star! </p>
+
+
+            </div>
+
+            <img src="media/about.png" alt="sun">
+
+        </div>
+    </body>
+
+</html>

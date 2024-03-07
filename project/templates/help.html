@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Help Page</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/headerStyle.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/help.css' %}">
+        <script src="../static/javascript/nav-effect.js" defer></script>
+
+    </head>
+
+    <body>
+        <header>
+            <div class="content">
+                <h1>SunSpoty</h1>
+                <ul>
+                    <li><a class="anchor active" href="/">Home Page</a></li>
+                    <li><a class="anchor" href="/about">About Sunspoty</a></li>
+                    <li><a class="anchor" href="/help">How to use me?</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="help">
+            <div id="help-text">
+                <h1>How to Use Sunspoty?</h1>
+                <div>
+                    <h2>Wolf Number Calculation</h2>
+                    <ul>
+                        <li><span>Upload Full Disc Image:</span>To calculate the Wolf number, start by uploading an
+                            image of
+                            the full disc of the sun. Ensure that the image contains visible sunspots.</li>
+                        <li><span>Configure Parameters (Optional): </span> If desired, you can configure the parameters
+                            for
+                            the calculation. Enter the desired values for the kernel size of the Sobel operator, DBSCAN
+                            epsilon, and sensitivity. If you prefer to use the default settings, you can skip this step.
+                        </li>
+                        <li><span>Submit and Calculate:</span>Once the image and parameters (if applicable) are set,
+                            click
+                            the "Submit" button to initiate the calculation process. Sunspoty will process the image and
+                            display the calculated Wolf number based on the detected sunspots.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2>Sunspot Classification</h2>
+                    <ul>
+                        <li><span>Upload Magnetic Image:</span> For sunspot classification, upload a magnetic image of a
+                            sunspot. This image should highlight the magnetic properties of the sunspot.</li>
+                        <li><span>Submit and Process:</span>After uploading the magnetic image, click the "Submit"
+                            button to
+                            initiate the classification process. Sunspoty's classification model will automatically
+                            process
+                            the image and determine the sunspot's classification.</li>
+                        <li><span>View Classification Result:</span>Once the processing is complete, Sunspoty will
+                            display
+                            the classification result, indicating whether the sunspot is categorized as alpha, beta, or
+                            betax.</li>
+
+                    </ul>
+                </div>
+            </div>
+            <img src="media/help.png" alt="Help image">
+        </div>
+
+    </body>
+
+</html>
