@@ -166,8 +166,8 @@ Le modèle entraîné est stocké dans le dossier `models/` et chargé automatiq
 
 **Imene At**  
 Master en Informatique — Spécialité Informatique visuelle
-🔗 [GitHub](https://github.com/at-imene)
-**BOUACHAT Anfel sara**
+🔗 [GitHub](https://github.com/at-imene)<br><br>
+**BOUACHAT Anfel sara** <br>
 Master en Informatique — Spécialité Informatique visuelle
 🔗 [GitHub](https://github.com/SararaHcn)
 
