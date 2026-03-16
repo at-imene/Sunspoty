@@ -158,13 +158,17 @@ Le modèle entraîné est stocké dans le dossier `models/` et chargé automatiq
 
 ## 📷 Aperçu
 
-> *(Ajouter des captures d'écran de l'interface web ici)*
+![Interface principale](assets/1696020139195.jpeg)
+
+![détection des taches](assets/1696020166264.jpeg)
+
+![classification des taches](assets/1696020199372.jpeg)
 
 ---
 
 ## 👩‍💻 Auteure
 
-**Imene At**  
+**Imene ATCHI**  
 Master en Informatique — Spécialité Informatique visuelle
 🔗 [GitHub](https://github.com/at-imene)<br><br>
 **BOUACHAT Anfel sara** <br>
